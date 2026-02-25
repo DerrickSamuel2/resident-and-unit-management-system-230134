@@ -1,0 +1,4 @@
+{
+    "command": "npm run build",
+    "working_directory": "/home/kavia/workspace/code-generation/resident-and-unit-management-system-230134/frontend_app"
+}
