@@ -18,13 +18,18 @@ function hasDetailField(value: unknown): value is { detail: unknown } {
 }
 
 function getApiBaseUrl(): string {
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL;
+  // The platform/container currently provides NEXT_PUBLIC_API_BASE, while local dev
+  // and docs may use NEXT_PUBLIC_API_BASE_URL. Support both to avoid hard failures.
+  const base =
+    process.env.NEXT_PUBLIC_API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE;
+
   if (!base) {
     // Intentionally explicit so misconfiguration is obvious during development/CI.
     throw new Error(
-      "NEXT_PUBLIC_API_BASE_URL is not set. Define it in frontend_app environment."
+      "Backend API base URL is not set. Define NEXT_PUBLIC_API_BASE_URL (preferred) or NEXT_PUBLIC_API_BASE in frontend_app environment."
     );
   }
+
   return base.replace(/\/+$/, "");
 }
 
