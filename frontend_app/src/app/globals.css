@@ -2,6 +2,7 @@
 
 /* Retro-ish theme tokens */
 :root {
+  /* Default theme: dark (current look) */
   --bg: #0b1020;
   --surface: #0f1730;
   --surface-2: #121c3a;
@@ -22,6 +23,18 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+/* Light theme overrides (still retro: crisp borders, subtle gradients) */
+:root[data-theme="light"] {
+  --bg: #f6f8ff;
+  --surface: #ffffff;
+  --surface-2: #f2f6ff;
+  --text: #111827;
+  --muted: #475569;
+
+  --border: rgba(17, 24, 39, 0.14);
+  --shadow: rgba(2, 6, 23, 0.12);
 }
 
 * {
