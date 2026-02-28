@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
@@ -12,7 +13,11 @@ export default function Home() {
                 Search residents, manage privacy, and broadcast announcements.
               </div>
             </div>
-            <span className="badge">RETRO / SECURE / ROLE-BASED</span>
+
+            <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+              <span className="badge">RETRO / SECURE / ROLE-BASED</span>
+              <ThemeToggle />
+            </div>
           </header>
 
           <div className="cardBody">
