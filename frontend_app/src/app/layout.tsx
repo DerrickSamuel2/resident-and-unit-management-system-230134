@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeBootstrap } from "@/components/ThemeBootstrap";
 
 export const metadata: Metadata = {
   title: "Resident Directory",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <ThemeBootstrap />
+        {children}
+      </body>
     </html>
   );
 }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { clearAuth, getAuth } from "@/lib/auth";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import React from "react";
 
 type NavItem = { href: string; label: string; kbd?: string };
@@ -61,6 +62,7 @@ export function RetroShell({
             </div>
             <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
               {rightHeader}
+              <ThemeToggle />
               {auth?.token ? (
                 <button
                   type="button"
